@@ -10,13 +10,15 @@ import UIKit
 import RealmSwift
 import UserNotifications
 
-class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
-
+class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    var searchBar: UISearchBar!
     
     // Realmインスタンス取得（例外強制無視）
     let realm = try! Realm()
-    
+
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
     
     override func viewDidLoad() {
@@ -24,8 +26,36 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
 
         tableView.delegate = self
         tableView.dataSource = self
+        self.setupSearchBar()
     }
 
+    // SearchBarをナビゲーションエリアに設定
+    func setupSearchBar() {
+        if let navigationBarFrame = navigationController?.navigationBar.bounds {
+            let searchBar: UISearchBar = UISearchBar(frame: navigationBarFrame)
+            searchBar.delegate = self
+            searchBar.placeholder = "カテゴリで探す"
+            searchBar.tintColor = UIColor.gray
+            searchBar.keyboardType = UIKeyboardType.default
+            navigationItem.titleView = searchBar
+            navigationItem.titleView?.frame = searchBar.frame
+            self.searchBar = searchBar
+        }
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            // 最初の状態に戻す
+            taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
+        } else {
+            // 入力した文字列から部分一致でフィルタリングを行う。
+            taskArray = try! Realm().objects(Task.self).filter("category CONTAINS %@", searchText)
+        }
+
+        // 画面更新
+        tableView.reloadData()
+    }
+    
     // データの数(=セルの数)を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskArray.count
@@ -42,9 +72,12 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm"
-        
+                
         let dateString:String = formatter.string(from: task.date)
-        cell.detailTextLabel?.text = dateString
+        
+        let category = task.category
+        
+        cell.detailTextLabel?.text = dateString + ":" + category
         
         return cell
     }

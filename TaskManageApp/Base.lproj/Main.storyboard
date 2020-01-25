@@ -97,45 +97,64 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UNu-Jp-fc5">
-                                <rect key="frame" x="10" y="160" width="355" height="120"/>
+                                <rect key="frame" x="10" y="160" width="355" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="GD7-Vy-fG6"/>
+                                    <constraint firstAttribute="height" constant="50" id="qPT-DC-Tk1"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeI-Ap-2Dp">
+                                <rect key="frame" x="10" y="220" width="355" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqy-TJ-qCu">
+                                <rect key="frame" x="10" y="251" width="355" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="45q-T7-Big">
-                                <rect key="frame" x="0.0" y="290" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="295" width="375" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="7Zj-TJ-dRr"/>
+                                    <constraint firstAttribute="height" constant="100" id="VSt-oo-Jrq"/>
                                 </constraints>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="45q-T7-Big" firstAttribute="leading" secondItem="GjC-vq-xwi" secondAttribute="leading" id="45k-xl-TOy"/>
                             <constraint firstItem="GjC-vq-xwi" firstAttribute="trailing" secondItem="GMx-iU-uiV" secondAttribute="trailing" constant="10" id="4dO-bH-cUr"/>
+                            <constraint firstItem="GjC-vq-xwi" firstAttribute="trailing" secondItem="aeI-Ap-2Dp" secondAttribute="trailing" constant="10" id="5rl-1l-MTY"/>
                             <constraint firstItem="UNu-Jp-fc5" firstAttribute="leading" secondItem="GjC-vq-xwi" secondAttribute="leading" constant="10" id="8YW-m4-ydS"/>
                             <constraint firstItem="GMx-iU-uiV" firstAttribute="leading" secondItem="GjC-vq-xwi" secondAttribute="leading" constant="10" id="8nR-4Z-3jF"/>
-                            <constraint firstItem="45q-T7-Big" firstAttribute="top" secondItem="UNu-Jp-fc5" secondAttribute="bottom" constant="10" id="KrQ-HK-OFb"/>
+                            <constraint firstItem="45q-T7-Big" firstAttribute="leading" secondItem="GjC-vq-xwi" secondAttribute="leading" id="Awz-i9-6oI"/>
+                            <constraint firstItem="aeI-Ap-2Dp" firstAttribute="leading" secondItem="GjC-vq-xwi" secondAttribute="leading" constant="10" id="EaZ-ch-UuF"/>
+                            <constraint firstItem="GjC-vq-xwi" firstAttribute="trailing" secondItem="dqy-TJ-qCu" secondAttribute="trailing" constant="10" id="G82-n3-l2E"/>
                             <constraint firstItem="pvS-w9-0kW" firstAttribute="top" secondItem="GMx-iU-uiV" secondAttribute="bottom" constant="10" id="M1r-IS-H54"/>
                             <constraint firstItem="2tx-Zg-zTJ" firstAttribute="top" secondItem="pvS-w9-0kW" secondAttribute="bottom" constant="10" id="NSH-qd-5Wg"/>
+                            <constraint firstItem="dqy-TJ-qCu" firstAttribute="leading" secondItem="GjC-vq-xwi" secondAttribute="leading" constant="10" id="NfL-iV-2ec"/>
                             <constraint firstItem="GMx-iU-uiV" firstAttribute="top" secondItem="GjC-vq-xwi" secondAttribute="top" constant="10" id="NzW-98-JHp"/>
+                            <constraint firstItem="GjC-vq-xwi" firstAttribute="trailing" secondItem="45q-T7-Big" secondAttribute="trailing" id="SP2-jB-g7o"/>
                             <constraint firstItem="2tx-Zg-zTJ" firstAttribute="leading" secondItem="GjC-vq-xwi" secondAttribute="leading" constant="10" id="UtS-4s-nt5"/>
                             <constraint firstItem="GjC-vq-xwi" firstAttribute="trailing" secondItem="UNu-Jp-fc5" secondAttribute="trailing" constant="10" id="WIN-yz-4Jy"/>
+                            <constraint firstItem="dqy-TJ-qCu" firstAttribute="top" secondItem="aeI-Ap-2Dp" secondAttribute="bottom" constant="10" id="b1a-Ae-4Yv"/>
                             <constraint firstItem="pvS-w9-0kW" firstAttribute="leading" secondItem="GjC-vq-xwi" secondAttribute="leading" constant="10" id="bnu-CP-AAm"/>
-                            <constraint firstItem="GjC-vq-xwi" firstAttribute="trailing" secondItem="45q-T7-Big" secondAttribute="trailing" id="j5y-oW-VAf"/>
                             <constraint firstItem="GjC-vq-xwi" firstAttribute="trailing" secondItem="2tx-Zg-zTJ" secondAttribute="trailing" constant="10" id="jBW-LS-t9P"/>
+                            <constraint firstItem="aeI-Ap-2Dp" firstAttribute="top" secondItem="UNu-Jp-fc5" secondAttribute="bottom" constant="10" id="m8W-7b-hfd"/>
                             <constraint firstItem="GjC-vq-xwi" firstAttribute="trailing" secondItem="pvS-w9-0kW" secondAttribute="trailing" constant="10" id="tQw-k0-PsD"/>
                             <constraint firstItem="UNu-Jp-fc5" firstAttribute="top" secondItem="2tx-Zg-zTJ" secondAttribute="bottom" constant="10" id="vP3-n2-Buu"/>
+                            <constraint firstItem="45q-T7-Big" firstAttribute="top" secondItem="dqy-TJ-qCu" secondAttribute="bottom" constant="10" id="vbe-ex-Zbi"/>
+                            <constraint firstItem="45q-T7-Big" firstAttribute="top" secondItem="dqy-TJ-qCu" secondAttribute="bottom" constant="10" id="yvh-xw-FCC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GjC-vq-xwi"/>
                     </view>
                     <navigationItem key="navigationItem" id="OzU-9s-hny"/>
                     <connections>
+                        <outlet property="category" destination="dqy-TJ-qCu" id="DIV-h5-sh2"/>
                         <outlet property="contentsTextView" destination="UNu-Jp-fc5" id="b9O-V2-3kC"/>
                         <outlet property="datePicker" destination="45q-T7-Big" id="Nkc-rG-0hJ"/>
                         <outlet property="titleTextField" destination="pvS-w9-0kW" id="dNc-hf-VSI"/>

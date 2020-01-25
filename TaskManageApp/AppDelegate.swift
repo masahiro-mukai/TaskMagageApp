@@ -19,8 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             // Enable or disable features based on authorization
         }
-        center.delegate = self     // 追加
-
+        center.delegate = self
         return true
     }
 
@@ -28,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound])
     }
-    
 
     // MARK: UISceneSession Lifecycle
 
@@ -43,7 +41,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
 
