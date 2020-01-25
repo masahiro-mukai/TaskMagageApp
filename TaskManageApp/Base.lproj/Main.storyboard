@@ -108,7 +108,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="45q-T7-Big">
-                                <rect key="frame" x="0.0" y="290" width="336" height="120"/>
+                                <rect key="frame" x="0.0" y="290" width="375" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="7Zj-TJ-dRr"/>
                                 </constraints>
